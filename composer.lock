@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "67ece7f6b895643213cbefbd30ecc3e6",
+    "content-hash": "2a4f3742d07e63df57c7dbf831a74a64",
     "packages": [
+        {
+            "name": "abraham/twitteroauth",
+            "version": "0.7.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abraham/twitteroauth.git",
+                "reference": "78ece83edd58933ec0a5b5aad906a1d34a694634"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/78ece83edd58933ec0a5b5aad906a1d34a694634",
+                "reference": "78ece83edd58933ec0a5b5aad906a1d34a694634",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "~2.4",
+                "phpunit/phpunit": "~5.6",
+                "squizlabs/php_codesniffer": "~2.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Abraham\\TwitterOAuth\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abraham Williams",
+                    "email": "abraham@abrah.am",
+                    "homepage": "https://abrah.am",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
+            "homepage": "https://twitteroauth.com",
+            "keywords": [
+                "Twitter API",
+                "Twitter oAuth",
+                "api",
+                "oauth",
+                "rest",
+                "social",
+                "twitter"
+            ],
+            "time": "2017-06-01T00:28:10+00:00"
+        },
         {
             "name": "darrynten/any-cache",
             "version": "v1.0.1",
@@ -689,16 +743,16 @@
         },
         {
             "name": "rize/uri-template",
-            "version": "0.3.1",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rize/UriTemplate.git",
-                "reference": "35cee84ae1c4fe0a6599392d7ca13977ff664bee"
+                "reference": "9e5fdd5c47147aa5adf7f760002ee591ed37b9ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rize/UriTemplate/zipball/35cee84ae1c4fe0a6599392d7ca13977ff664bee",
-                "reference": "35cee84ae1c4fe0a6599392d7ca13977ff664bee",
+                "url": "https://api.github.com/repos/rize/UriTemplate/zipball/9e5fdd5c47147aa5adf7f760002ee591ed37b9ca",
+                "reference": "9e5fdd5c47147aa5adf7f760002ee591ed37b9ca",
                 "shasum": ""
             },
             "require": {
@@ -729,7 +783,7 @@
                 "template",
                 "uri"
             ],
-            "time": "2017-02-21T15:25:22+00:00"
+            "time": "2017-06-14T03:57:53+00:00"
         }
     ],
     "packages-dev": [
@@ -841,12 +895,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "e0fd9ceb9a191f892983a848291d2c6a91cd09d7"
+                "reference": "a162bb147f19f90f80cf88dd6c0198135e873cde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/e0fd9ceb9a191f892983a848291d2c6a91cd09d7",
-                "reference": "e0fd9ceb9a191f892983a848291d2c6a91cd09d7",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/a162bb147f19f90f80cf88dd6c0198135e873cde",
+                "reference": "a162bb147f19f90f80cf88dd6c0198135e873cde",
                 "shasum": ""
             },
             "require": {
@@ -898,7 +952,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2017-06-05T13:23:09+00:00"
+            "time": "2017-06-16T20:18:48+00:00"
         },
         {
             "name": "myclabs/deep-copy",
