@@ -31,8 +31,6 @@ $ sudo chmod +x xampp-linux-x64-7.1.4-0-installer.run
 $ sudo ./xampp-linux-x64-7.1.4-0-installer.run 
 $ sudo apt-get install curl php7.0-cli git
 $ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-$ php /usr/local/bin/composer install
-$ php /usr/local/bin/composer update
 $ sudo apt-get install google-cloud-sdk
 $ gcloud init
 ```
@@ -44,10 +42,12 @@ $ sudo /opt/lampp/lampp stop
 $ cd opt/lampp
 ```
 
-Extract this into your vm, doesnt matter how, but place it into the htdocs folder and re-name twitter_login.php to index.php and start the LAMPP again
+Extract this repository into your vm, doesnt matter how, but place it into the htdocs folder and re-name twitter_login.php to index.php and start the LAMPP again
 
 ```sh
 $ sudo mv twitter_login.php index.php
+$ php /usr/local/bin/composer install
+$ php /usr/local/bin/composer update
 $ sudo /opt/lampp/lampp start
 ```
 
