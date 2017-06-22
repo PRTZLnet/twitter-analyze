@@ -46,6 +46,7 @@ $ cd opt/lampp
 Extract this repository into your vm, doesnt matter how, but place it into the htdocs folder and re-name twitter_login.php to index.php and start the LAMPP again
 
 ```sh
+$ cd htdocs
 $ sudo mv twitter_login.php index.php
 $ php /usr/local/bin/composer install
 $ php /usr/local/bin/composer update
