@@ -30,19 +30,19 @@ $token = $connection->oauth(
     ]
 );
 // connect with user token
-$twitter = new TwitterOAuth(
+$d = new TwitterOAuth(
     $config['consumer_key'],
     $config['consumer_secret'],
     $token['oauth_token'],
     $token['oauth_token_secret']
 );
-$user = $twitter->get('account/verify_credentials');
+$user = $d->get('account/verify_credentials');
 // if something's wrong, go and log in again
 if(isset($user->error)) {
     header('Location: ' . $config['url_login']);
 }
 // fuck pdo tbh
-$test = $twitter->get('account/settings');
+$test = $d->get('account/settings');
 $usr = $test->screen_name;
 
 // Config options
@@ -135,34 +135,63 @@ if($sentiment['score'] != null) {
 $r = ($r / $g);
 echo 'final =' . $r;
 if ($r==1){
-    echo'Your twitter is exceptionally posative! woah bruh';
+    $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is only positive!(".($r*100)."%)"
+    ]
+);
 }
 else if ($r > .6){
-    echo 'your twitter is very very posative!';
-    echo $r;
+        $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is very positive!(".($r*100)."%)"
+    ]
+);
 }
 else if ($r > .3){
-    echo 'your twitter mostly posative!';
-}
+    $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is mostly positive!(".($r*100)."%)"
+    ]
+);}
 else if ($r > 0){
-    echo 'your twitter is sorta posative!';
-}
+    $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is sorta positive!(".($r*100)."%)"
+    ]
+);}
 else if ($r == 0){
-    echo 'your twitter is sorta totally neutral!';
-}
+    $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is totally neutral!(".($r*100)."%)"
+    ]
+);}
 else if ($r== -1){
-    echo'Your twitter is exceptionally negative! woah bruh';
-}
-else if ($r > -.6){
-    echo 'your twitter is very very negative!';
-}
+    $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is only negative!(".($r*100)."%)"
+    ]
+);}
+else if ($r < -.6){
+    $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is very negative!(".($r*100)."%)"
+    ]
+);}
+else if ($r < -.3){
+    $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is mostly negative!(".($r*100)."%)"
+    ]
+);}
 else if ($r > -.3){
-    echo 'your twitter mostly negative!';
-}
-else if ($r > -0){
-    echo 'your twitter is sorta negative!';
-}
+    $status = $d->post(
+    "statuses/update", [
+        "status" => "according to http://twitter.prtzl.net my twitter is sorta negative!(".($r*100)."%)"
+    ]
+);}
 
-
+$url = "https://twitter.com";
+header('Location: '. $url);
  
 ?>
