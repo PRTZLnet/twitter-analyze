@@ -4,7 +4,6 @@ require __DIR__ . '/vendor/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
  
 session_start();
- 
 $config = require_once 'cfg.php';
 
 $twitteroauth = new TwitterOAuth($config['consumer_key'], $config['consumer_secret']);
