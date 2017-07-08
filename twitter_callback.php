@@ -6,6 +6,7 @@ use DarrynTen\GoogleNaturalLanguagePhp\GoogleNaturalLanguage;
 
 session_start();
 $config = require_once 'cfg.php';
+
 $oauth_verifier = filter_input(INPUT_GET, 'oauth_verifier');
 if (empty($oauth_verifier) ||
     empty($_SESSION['oauth_token']) ||
@@ -41,6 +42,7 @@ $usr = $test->screen_name;
 $config = [
   'projectId' => 'personal-cloud-155618'  // At the very least
 ];
+
 
 $language = new GoogleNaturalLanguage($config);
 
