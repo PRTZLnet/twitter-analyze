@@ -6,30 +6,24 @@ use DarrynTen\GoogleNaturalLanguagePhp\GoogleNaturalLanguage;
 
 session_start();
 $config = require_once 'cfg.php';
-// get and filter oauth verifier
 $oauth_verifier = filter_input(INPUT_GET, 'oauth_verifier');
-// check tokens
 if (empty($oauth_verifier) ||
     empty($_SESSION['oauth_token']) ||
     empty($_SESSION['oauth_token_secret'])
 ) {
-    // something's missing, go and login again
     header('Location: ' . $config['url_login']);
 }
-// connect with application token
 $connection = new TwitterOAuth(
     $config['consumer_key'],
     $config['consumer_secret'],
     $_SESSION['oauth_token'],
     $_SESSION['oauth_token_secret']
 );
-// request user token
 $token = $connection->oauth(
     'oauth/access_token', [
         'oauth_verifier' => $oauth_verifier
     ]
 );
-// connect with user token
 $d = new TwitterOAuth(
     $config['consumer_key'],
     $config['consumer_secret'],
@@ -37,7 +31,6 @@ $d = new TwitterOAuth(
     $token['oauth_token_secret']
 );
 $user = $d->get('account/verify_credentials');
-// if something's wrong, go and log in again
 if(isset($user->error)) {
     header('Location: ' . $config['url_login']);
 }
@@ -45,12 +38,10 @@ if(isset($user->error)) {
 $test = $d->get('account/settings');
 $usr = $test->screen_name;
 
-// Config options
 $config = [
   'projectId' => 'personal-cloud-155618'  // At the very least
 ];
 
-// Make a processor
 $language = new GoogleNaturalLanguage($config);
 
 $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
