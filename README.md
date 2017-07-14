@@ -1,3 +1,8 @@
+
+# update 7/14
+
+I've broken something and I cant seem to get it to work anymore :( so you are on your own
+
 # twitter.prtzl.net
 
 Using google natural language API, and the twitter API it allows users to display positive/negative ratings for their twitter profiles
