@@ -1,7 +1,7 @@
 
-# update 7/14
+# update 9/19
 
-I've broken something and I cant seem to get it to work anymore :( so you are on your own
+Shit is getting pushed tomorrow but here's a pre-update for the readme
 
 # twitter.prtzl.net
 
@@ -36,6 +36,8 @@ $ sudo wget "https://www.apachefriends.org/xampp-files/7.1.4/xampp-linux-x64-7.1
 $ sudo chmod +x xampp-linux-x64-7.1.4-0-installer.run 
 $ sudo ./xampp-linux-x64-7.1.4-0-installer.run 
 $ sudo apt-get install curl php7.0-cli git
+$ sudo apt-get install php7.0-xml (just in case)
+$ sudo apt-get install php-mbstring (also just in case)
 $ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 $ sudo apt-get install google-cloud-sdk
 $ gcloud init
@@ -59,16 +61,13 @@ $ sudo /opt/lampp/lampp start
 ```
 
 
-### Permissions on Linux
-
-I'm not gonna lie, I went against every single guide on the internet and just set permissions for everthing to 777 *****which is the single worst idea ever do not fucking do it because then everyone has write, read and delete permissions in all directories including root ones which could potentially give hackers access to your google account!!!*****(<--I dont know if this is true or not). 
-
-Just Don't be lazy like me and figure it out or something.
+### Permissions on Linux:
+ - should actually be fixed. so that's nice.
 
 ### todo:
 - Actually write unit tests and integrate with travis ci
-- Actually sort permissions as to not be a ***GIANT*** security hole
 - Not cache json output from twitter to save memory and monies
 - Google Cloud API integration *without* the SDK 
 
-
+### possible bugs:
+- curl may not install right so, that's something i'll have to narrow down in a better tutorial
