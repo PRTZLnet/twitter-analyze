@@ -50,6 +50,10 @@ $ sudo /opt/lampp/lampp stop
 $ cd opt/lampp
 ```
 
+
+
+
+### may or may not be required
 Extract this repository into your vm, doesnt matter how, but place it into the htdocs folder and re-name twitter_login.php to index.php and start the LAMPP again
 
 ```sh
