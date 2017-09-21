@@ -85,8 +85,8 @@ $ sudo /opt/lampp/lampp start
 
 ### todo:
 - Actually write unit tests and integrate with travis ci
-- Not cache json output from twitter to save memory and monies
-- Google Cloud API integration *without* the SDK 
-
+- Move from the forced-to-tweet model to pretty charts and the option to post
+- Storing data for next login (e.g. your twitter got 5% more hostile)
+- Store old tweets and their sentiments per account so that I don't have to keep pulling them when the user logs in. As in, it only gets the sentiment of a new tweet. Twitter's REST API supports getting 'newest' `since_id`. So that'll have to be stored with the rest of the data(Probably in a fucking huge JSON or NoSQL database)
 ### possible bugs:
 - curl may not install right so, that's something i'll have to narrow down in a better tutorial
