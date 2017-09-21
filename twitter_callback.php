@@ -91,3 +91,8 @@ $array[$g]['s'] = $tempvar1;
 $r = ($r / $g);
 echo 'final =' . $r;
 print_r($array);
+$_SESSION['arr'] = $array;
+$url1 = "index.php";
+header('Location: '. $url1);
+
+?>
