@@ -1,0 +1,40 @@
+.menu-item, .navbar {
+  height: 50px;
+}
+.md-menu-items {
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: lightgrey;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: lightgrey;
+}
+.menu-button {
+  background: transparent;
+}
+.menu-text, .menu-header {
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+}
+.menu-text {
+  cursor: pointer;
+}
+
+.col-xs-4:hover{
+	background-color: rgba(175,175,175,0.32);
+	   
+	  cursor: pointer;
+
+}
+
+.menu-header {
+  font-size: 2rem;
+}
+.main-navbar {
+  margin-bottom: 0px !important
+}
+.page-list {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
