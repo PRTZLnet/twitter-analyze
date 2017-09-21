@@ -16,6 +16,18 @@ The only data received by the site is:
   - API keys for individual accounts obtained by 0auth2.0
   - JSON response from twitter API cached into locally stored file
   - JSON response from Google's Natural Language API
+  
+# How is the data analyzed?
+
+via Google's Natural Language API
+* [Docs](https://cloud.google.com/natural-language/docs/basics)
+
+| Sentiment        | Sample Values           
+| ------------- |:-------------: 
+| Clearly Positive   | "score": 0.8, "magnitude": 3.0
+| Clearly Negative     | "score": -0.6, "magnitude": 4.0      
+| Neutral | 	"score": 0.1, "magnitude": 0.0   
+| Mixed | 	"score": 0.0, "magnitude": 4.0 
 
 ### Special Thanks
 * [Darrynten](https://github.com/darrynten/google-natural-language-php) - For making a PHP wrapper for Google's Natural Language API
