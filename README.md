@@ -20,7 +20,7 @@ The only data received by the site is:
 # How is the data analyzed?
 Old system is gone and will be updated.
 
-but here's how the data is given to me.
+But here's how the data is given to me.
 via Google's Natural Language API
 * [Docs](https://cloud.google.com/natural-language/docs/basics)
 
@@ -31,22 +31,24 @@ via Google's Natural Language API
 | Neutral | 	"score": 0.1, "magnitude": 0.0   
 | Mixed | 	"score": 0.0, "magnitude": 4.0 
 
+So, generally .2>0>-.2 is not conclusive.
+
 ### Special Thanks
 * [Darrynten](https://github.com/darrynten/google-natural-language-php) - For making a decent PHP wrapper (+ extra features) for Google's Natural Language API
 
 ### Installation for all the hobbyists and myself when I forget
 
 twitter-analyze requires :
-- PHP 7.0+ to run
+- PHP 5.5+ to run
 - Composer
 - Twitter Dev keys
 - Google API SDK credentials 
-- Google Compute Engine instance (you can run it at home or on AWS/Azure/VPS/any other Apache/PHP capable service, but you can go look at google's documentation yourself to get that working)
-- Ubuntu 16.04 LTS
-- You to set your own consumer keys, secrets and url_login and url_callback in cfg.php
+- Google Compute Engine/App Engine instance (you can run it at home or on AWS/Azure/VPS/any other Apache/PHP capable service, but you can go look at google's documentation yourself to get that working)
+- Preferably Ubuntu 16.04 LTS because that's what I test on. If you are familiar enough with Linux to be reading this far down, you can figure it out
+- You to set your own consumer keys, secrets and url_login and url_callback in cfg.php and the one few lines toward the bottom of callback
 - Set callback URL and website on apps.twitter.com
 
-To get the thing working install a LAMPP stack, composer, gcloud (already partially installed if on GCE) and PHP 7.0+:
+To get the thing working install a LAMPP stack, composer, gcloud (already partially installed if on GCE/AE, you will need to run `$ gcloud config list core/` to get a prompt to set up an embedded account/default credentials) and PHP 5.5+:
 
 ```sh
 $ sudo apt-get update
@@ -57,31 +59,7 @@ $ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/lo
 $ sudo apt-get install google-cloud-sdk
 $ gcloud init
 ```
-
-Then 
-
-```sh
-$ sudo /opt/lampp/lampp stop
-$ cd opt/lampp
-```
-
-
-
-
-### may or may not be required
-Extract this repository into your vm, doesnt matter how, but place it into the htdocs folder and re-name twitter_login.php to index.php and start the LAMPP again
-
-```sh
-$ cd htdocs
-$ sudo mv twitter_login.php index.php
-$ php /usr/local/bin/composer install
-$ php /usr/local/bin/composer update
-$ sudo /opt/lampp/lampp start
-```
-
-
-### Permissions on Linux:
- - should actually be fixed. so that's nice.
+ nice.
 
 ### todo:
 - Actually write unit tests and integrate with travis ci
