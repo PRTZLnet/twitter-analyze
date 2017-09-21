@@ -32,7 +32,7 @@ via Google's Natural Language API
 | Mixed | 	"score": 0.0, "magnitude": 4.0 
 
 ### Special Thanks
-* [Darrynten](https://github.com/darrynten/google-natural-language-php) - For making a PHP wrapper for Google's Natural Language API
+* [Darrynten](https://github.com/darrynten/google-natural-language-php) - For making a decent PHP wrapper (+ extra features) for Google's Natural Language API
 
 ### Installation for all the hobbyists and myself when I forget
 
