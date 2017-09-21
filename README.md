@@ -39,9 +39,6 @@ $ sudo apt-get update
 $ sudo wget "https://www.apachefriends.org/xampp-files/7.1.4/xampp-linux-x64-7.1.4-0-installer.run"
 $ sudo chmod +x xampp-linux-x64-7.1.4-0-installer.run 
 $ sudo ./xampp-linux-x64-7.1.4-0-installer.run 
-$ sudo apt-get install curl php7.0-cli git
-$ sudo apt-get install php7.0-xml (just in case)
-$ sudo apt-get install php-mbstring (also just in case)
 $ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 $ sudo apt-get install google-cloud-sdk
 $ gcloud init
