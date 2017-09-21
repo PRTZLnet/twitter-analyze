@@ -1,7 +1,11 @@
 
-# update 9/19
+# update 9/20
 
-Shit is getting pushed tomorrow but here's a pre-update for the readme
+Shit is getting pushed this week but here's a pre-update for the readme
+
+ - Updated composer.json to be my own not a copy of someone else's
+ - fixed security holes
+ - removed a significant part of code that was dev-only (the JSON sorting script)
 
 # twitter.prtzl.net
 
