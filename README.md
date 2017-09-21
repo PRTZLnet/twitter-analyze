@@ -18,7 +18,9 @@ The only data received by the site is:
   - JSON response from Google's Natural Language API
   
 # How is the data analyzed?
+Old system is gone and will be updated.
 
+but here's how the data is given to me.
 via Google's Natural Language API
 * [Docs](https://cloud.google.com/natural-language/docs/basics)
 
