@@ -1,11 +1,11 @@
 
-# update 9/20
+# update 9/27
 
-Shit is getting pushed this week but here's a pre-update for the readme
+Re-wrote most of `twitter_callback.php` to rely on my own programming skills rather than a tutorials. With that being said, there is now waaaaaaaaaaaaaaaaaaaaaay more consistancies with variable names and methoding. What is OOP again?
 
- - Updated composer.json to be my own not a copy of someone else's
+ - fixed certain API calls needing seperate declarations instead of using $_SESSION
  - fixed security holes
- - removed a significant part of code that was dev-only (the JSON sorting script)
+ - layed a groundwork for a tweet-gate in index.php, gonna have to move that to callback tho
 
 # twitter.prtzl.net
 
