@@ -2,29 +2,30 @@
  
 require __DIR__ . '/vendor/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
- 
-
 session_start();
 $config = require_once 'cfg.php';
 
-$twitteroauth = new TwitterOAuth($config['consumer_key'], $config['consumer_secret']);
- 
-$request_token = $twitteroauth->oauth(
+
+
+
+$initial = new TwitterOAuth($config['consumer_key'], $config['consumer_secret']);
+$getToken = $initial->oauth(
     'oauth/request_token', [
         'oauth_callback' => $config['url_callback']
     ]
 );
  
-if($twitteroauth->getLastHttpCode() != 200) {
+if($initial->getLastHttpCode() != 200) {
+    //!!!420 is a limit problem
     throw new \Exception('There was a problem performing this request');
 }
  
-$_SESSION['oauth_token'] = $request_token['oauth_token'];
-$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+$_SESSION['oauth_token'] = $getToken['oauth_token'];
+$_SESSION['oauth_token_secret'] = $getToken['oauth_token_secret'];
  
-$url = $twitteroauth->url(
+$url = $initial->url(
     'oauth/authorize', [
-        'oauth_token' => $request_token['oauth_token']
+        'oauth_token' => $getToken['oauth_token']
     ]
 );
  
