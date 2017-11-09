@@ -40,8 +40,9 @@ if($_SESSION['arr'] == null){
 <table id="table">
   <div class="row">
     <div class="col-xs-12">
-      <p><b>This takes RTs = Endorsments; meaning RT sentiment IS factored in.</b></p>
+      <p><b>This takes RTs = Endorsements; meaning RT sentiment IS factored in.</b></p>
       <p><b>Also, google's AI is not so good at parsing slang or sarcasm, take scores with a grain of salt.</b></p>
+      <p>generally, all caps also fucks with this shit</p>
       <table class="table table-bordered table-hover dt-responsive" id='table'>
 
         <thead>
