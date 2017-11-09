@@ -1,3 +1,9 @@
+# update 11/8
+did QA on `index.php`, does some odd quirks, but it's not common. Feature I say.
+
+ - fixed spelling error
+ - added some notes for the user
+
 
 # update 9/27
 
@@ -66,5 +72,8 @@ $ gcloud init
 - Move from the forced-to-tweet model to pretty charts and the option to post
 - Storing data for next login (e.g. your twitter got 5% more hostile)
 - Store old tweets and their sentiments per account so that I don't have to keep pulling them when the user logs in. As in, it only gets the sentiment of a new tweet. Twitter's REST API supports getting 'newest' `since_id`. So that'll have to be stored with the rest of the data(Probably in a fucking huge JSON or NoSQL database)
+- update to 280 chars. Because twitter had to fuck with what was working. Time to analyze 280 character lil pump lyrics and the hottest takes around.
+
 ### possible bugs:
 - curl may not install right so, that's something i'll have to narrow down in a better tutorial
+- sometimes the index table flat out REFUSES to display more than 3 or 4 tweets. Still generates the columns for them. Probably a twitter response error rather than an issue with my code ¯\_(ツ)_/¯
