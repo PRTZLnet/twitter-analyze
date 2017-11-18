@@ -1,8 +1,9 @@
-# update 11/8
-did QA on `index.php`, does some odd quirks, but it's not common. Feature I say.
+# update 11/17
+did QA on `index.php`, does some odd quirks, but it's not common. Feature I'd say.
 
  - fixed spelling error
  - added some notes for the user
+ - on hold because twitter has banned c9, so...
 
 
 # update 9/27
