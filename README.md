@@ -1,18 +1,8 @@
-# update 11/17
-did QA on `index.php`, does some odd quirks, but it's not common. Feature I'd say.
+# update 12/4
 
- - fixed spelling error
- - added some notes for the user
- - on hold because twitter has banned c9, so...
+ - re-did most of the back end
+ - laid the framework for hash-tag searches
 
-
-# update 9/27
-
-Re-wrote most of `twitter_callback.php` to rely on my own programming skills rather than a tutorials. With that being said, there is now waaaaaaaaaaaaaaaaaaaaaay more consistancies with variable names and methoding. What is OOP again?
-
- - fixed certain API calls needing seperate declarations instead of using $_SESSION
- - fixed security holes
- - layed a groundwork for a tweet-gate in index.php, gonna have to move that to callback tho
 
 # twitter.prtzl.net
 
