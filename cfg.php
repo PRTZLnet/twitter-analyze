@@ -1,11 +1,10 @@
 <?php
  
 return [
-    // these api keys don't work, so go ahead and try lol
-    'consumer_key'      => 'ZptcrxHFhDZsphYeGezhD4kJh',
-    'consumer_secret'   => 'SUtmtVldq4FsgVOztz3imMnM8r59Oe29LceGi38o3xXEmTy0CN',
+    
+    'consumer_key'      => 'cEz2U9CqCFDT9iuvWfy49F3JK',
+    'consumer_secret'   => 'RK28EYdHWAArvVFfZ9ZBEezPaJTExbyUi5RMPtVHKeXw8tUyuG',
  
-    //
-    'url_login'         => 'http://localhost:8080/twitter_login.php',
-    'url_callback'      => 'http://localhost:8080/twitter_callback.php',
+    'url_login'         => 'https://qqq-prtzl.c9users.io/twitter_login.php',
+    'url_callback'      => 'https://qqq-prtzl.c9users.io/twitter_callback.php',
 ];

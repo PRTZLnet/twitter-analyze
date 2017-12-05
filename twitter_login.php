@@ -4,8 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
 session_start();
 $config = require_once 'cfg.php';
-
-
+// much of the following is adapted from Anton Bagaiev's guide that can be found here: https://code.tutsplus.com/tutorials/how-to-authenticate-users-with-twitter-oauth-20--cms-25713
 
 
 $initial = new TwitterOAuth($config['consumer_key'], $config['consumer_secret']);
@@ -16,8 +15,8 @@ $getToken = $initial->oauth(
 );
  
 if($initial->getLastHttpCode() != 200) {
-    //!!!420 is a limit problem
-    throw new \Exception('There was a problem performing this request');
+    //if it's not 200, I'm probably getting banned.
+    die();
 }
  
 $_SESSION['oauth_token'] = $getToken['oauth_token'];

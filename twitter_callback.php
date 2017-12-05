@@ -8,12 +8,9 @@ $configT = require_once 'cfg.php';
 $_SESSION['consumer_key'] = $configT['consumer_key'];
 $_SESSION['consumer_secret'] = $configT['consumer_secret'];
 
-//this is a step taken from mindmapengineer's guide; really only does something if twitter is fucking up
+//this is a step taken from mindmapengineer's guide
 $oauth_verifier = filter_input(INPUT_GET, 'oauth_verifier');
-if (empty($oauth_verifier) ||
-    empty($_SESSION['oauth_token']) ||
-    empty($_SESSION['oauth_token_secret'])
-) {
+if (empty($oauth_verifier) || empty($_SESSION['oauth_token']) || empty($_SESSION['oauth_token_secret'])) {
     header('Location: ' . $configT['url_login']);
 }
 
@@ -52,9 +49,6 @@ $config = [
 $language = new GoogleNaturalLanguage($config);
 
 
-$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-$getfield = '?screen_name=' . $usr;
-$requestMethod = 'GET';
 
 
 $settings = array(
@@ -66,26 +60,34 @@ $settings = array(
 
 $twitter = new TwitterAPIExchange($settings);
 
-$reqResult = $twitter->setGetfield($getfield)
+
+$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+$getfield = '?screen_name=' . $usr;
+$requestMethod = 'GET';
+$reqResult2 = $twitter->setGetfield($getfield)
     ->buildOauth($url, $requestMethod)
     ->performRequest();
+
+  
+  
+  
+   $url = 'https://api.twitter.com/1.1/search/tweets.json';
+$requestMethod = 'GET';
+$getfield = '?q=#FSU';
+$reqResult =  $twitter->setGetfield($getfield)
+                              ->buildOauth($url, $requestMethod)
+                              ->performRequest();
+
 $r = 0;
 $g = 0;
 $c = 0;
 
 $json_output = json_decode($reqResult);
 $array = array(
-                  array( 'tweet' => 'null','s' => null ),
-                  array( 'tweet' => 'null','s' => null ),
-                  array( 'tweet' => 'null','s' => null ),
-                  array( 'tweet' => 'null','s' => null ),
-                  array( 'tweet' => 'null','s' => null ),
-                  array( 'tweet' => 'null','s' => null ),
-                  array( 'tweet' => 'null','s' => null ),
 
               );
               
-foreach($json_output as $result) {
+foreach($json_output->statuses as $result) {
 $text = $result->text;
 $language->setText($text);
 $annotation = $language->getSentiment();
@@ -101,8 +103,32 @@ $array[$g]['s'] = $tempvar1;
 }
 }
 $r = ($r / $g);
-echo 'final =' . $r;
-print_r($array);
+$_SESSION['overall'] = $r;
 $_SESSION['arr'] = $array;
+
+
+$json_output = json_decode($reqResult2);
+$array2 = array(
+
+              );
+              
+foreach($json_output as $result) {
+$text = $result->text;
+$language->setText($text);
+$annotation = $language->getSentiment();
+$sentiment = $annotation->sentiment();
+if($sentiment['score'] != null) {
+$tempvar1 = $sentiment['score'];
+$array2[$g]['tweet'] = $text;
+$array2[$g]['s'] = $tempvar1;
+    $r+=$sentiment['score'];
+    echo $r . " ";
+    $g++;
+    echo $g. " ";
+}
+}
+$_SESSION['arr2'] = $array2;
+
+
 header('Location: index.php');
 ?>

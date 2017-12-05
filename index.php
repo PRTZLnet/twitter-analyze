@@ -22,27 +22,27 @@ if($_SESSION['arr'] == null){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
    <nav class="navbar navbar-default main-navbar">
-    <span class="col-xs-10 col-md-3 menu-item menu-header">twitter.prtzl.net</span>
+    <span class="col-xs-10 col-md-3 menu-item menu-header">ENC2135 Edition</span>
 
   <div class="menu-item hidden-xs hidden-sm col-md-6 md-menu-items">
 	  <a href="index.php"><div class="col-xs-4 menu-text">Home</div></a>
-	  <a href="twitter_login.php"><div class="col-xs-4 menu-text">Reload account</div></a>
+	  <a href="twitter_login.php"><div class="col-xs-4 menu-text">Pick account</div></a>
 
   </div>
   </nav>
-
-
-
-
+  
 <div class="container">
+  <br>
+     <p>This takes RTs = Endorsements; meaning RT sentiment IS factored in.</p>
+      <p>Also, google's AI is not so good at parsing slang or sarcasm, and I sure as shit can't afford IBM's, so take scores with a grain of salt.</p>
+ 
  <br>
- <input type="text" id="search" placeholder="Type to search">
+       <b>#FSU timeline</b>
+
 <table id="table">
   <div class="row">
     <div class="col-xs-12">
-      <p><b>This takes RTs = Endorsements; meaning RT sentiment IS factored in.</b></p>
-      <p><b>Also, google's AI is not so good at parsing slang or sarcasm, take scores with a grain of salt.</b></p>
-      <p>generally, all caps also fucks with this shit</p>
+     
       <table class="table table-bordered table-hover dt-responsive" id='table'>
 
         <thead>
@@ -53,7 +53,6 @@ if($_SESSION['arr'] == null){
         </thead>
         <tbody>
 <?php
-
 $count = 0;
 $avg = 0;
 $put = null;
@@ -68,37 +67,8 @@ session_start();
         $count++;
     }
 $avg = $avg/$count;
-
 ?>
-<!--
-for the future 
-<form method="post">
-    <input type="submit" name="test" id="test" value="RUN" /><br/>
-</form>
 
-<?php
-/*
-$TweetMe = $avg > 0.0 ? "My twitter is positive! Check yours at http://twitter.prtzl.net!" : "My twitter is negative! Check yours at http://twitter.prtzl.net!";
-require "vendor/autoload.php";
-use Abraham\TwitterOAuth\TwitterOAuth;
-$config = require_once 'cfg.php';
-$ck = $config['consumer_key'];
-$cs = $config['consumer_secret'];
-$ok = $_SESSION['oauth_token'];
-$ots = $_SESSION['oauth_token_secret'];
-
-function testfun()
-{
-   echo "rin";
-
-}
-
-if(array_key_exists('test',$_POST)){
-   testfun();
-}
-*/
-?>
--->
         </tbody>
         <tfoot>
           <tr> </tr>
@@ -106,6 +76,48 @@ if(array_key_exists('test',$_POST)){
       </table>
     </div>
   </div>
+  </div>
+  <div class="container">
+<b>Your twitter timeline</b></b>
+  <table id="table">
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-bordered table-hover dt-responsive" id='table'>
+
+        <thead>
+          <tr>
+            <th>tweet</th>
+            <th>rating</th>
+          </tr>
+        </thead>
+        <tbody>
+<?php
+$count = 0;
+$avg = 0;
+$put = null;
+session_start();
+    foreach($_SESSION['arr2'] as $tweet){
+      $avg+=$tweet['s'];
+      $put = $tweet['s'] > 0.0 ? "positive" : "negative";
+        echo'<tr>'; 
+        echo'<td>'. $tweet['tweet']."</td>";
+        echo'<td>('. $tweet['s'].') ' . $put . '</td>';
+        echo'<tr>';
+        $count++;
+    }
+$avg = $avg/$count;
+?>
+
+        </tbody>
+        <tfoot>
+          <tr> </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  
+  
+
 </div>
 <script type="text/javascript" src="js/srch.js"></script>
 <footer>
