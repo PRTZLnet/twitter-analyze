@@ -35,7 +35,7 @@ if($_SESSION['arr'] == null){
   <br>
      <p>This takes RTs = Endorsements; meaning RT sentiment IS factored in.</p>
       <p>Also, google's AI is not so good at parsing slang or sarcasm, and I sure as shit can't afford IBM's, so take scores with a grain of salt.</p>
- 
+       <p>The #FSU timeline is loaded to demonstrate the process data engineers could use to analyze how people see their companies product using Google's Natural Language machine learning algorithm. Your personal twitter timeline is loaded to demonstrate the use of the Natural Language API</p>
  <br>
        <b>#FSU timeline</b>
 
