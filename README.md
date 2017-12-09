@@ -33,5 +33,5 @@ So, generally .2>0>-.2 is not conclusive.
 * [Anton Bagaiev](https://code.tutsplus.com/tutorials/how-to-authenticate-users-with-twitter-oauth-20--cms-25713) - OATUH w/ twitter
 * [Abraham](https://abrah.am) - twitterOatuh library
 * [j7mbo](https://github.com/J7mbo/twitter-api-php) - PHP wrapper for the twitter API
-
+* My past self - used some of the old code from the old version of this with added optimization + features just for my ENC2135 class
 
